@@ -190,6 +190,7 @@ public class PostDaoMySqlImpl implements PostDao {
 
     @Transactional(readOnly = true)
     @Override
+    @Cached
     public List<PostCategory> selectAllCategories() {
         return jdbcTemplate.query("select * from postCategory", postCategoryRowMapper);
     }
